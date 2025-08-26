@@ -6,6 +6,7 @@ import topics from './routes/topics.js';
 import quiz from './routes/quiz.js';
 import readTopics from './routes/readTopics.js';
 import RateLimiterMemory from "rate-limiter-flexible/lib/RateLimiterMemory.js";
+import fs from 'fs';
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -28,7 +29,7 @@ app.use(cors());
 // Quiz images
 const quizImagesPath = path.join(__dirname, "media/quizImages/");
 
-app.get("/quizImages/:imageName", (req, res) => {
+app.get("/:imageName", (req, res) => {
   const requestedImage = path.join(quizImagesPath, req.params.imageName);
 
   // Check if file exists
