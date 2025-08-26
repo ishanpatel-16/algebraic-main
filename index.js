@@ -24,7 +24,22 @@ const app = express();
 app.use(bodyParser.json());
 import cors from 'cors';
 app.use(cors());
-app.use(express.static(__dirname + "/media/quizImages"));
+
+// Quiz images
+const quizImagesPath = path.join(__dirname, "media/quizImages");
+
+app.get("/quizImages/:imageName", (req, res) => {
+  const requestedImage = path.join(quizImagesPath, req.params.imageName);
+
+  // Check if file exists
+  if (fs.existsSync(requestedImage)) {
+    res.sendFile(requestedImage);
+  } else {
+    // Fallback image
+    res.sendFile(path.join(quizImagesPath, "default.png"));
+  }
+});
+
 app.use(express.static(__dirname + "/documents/word-document"));
 app.use(express.static(__dirname + "/documents/pdf-document"));
 app.use('/',user)
