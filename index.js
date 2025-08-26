@@ -26,7 +26,7 @@ import cors from 'cors';
 app.use(cors());
 
 // Quiz images
-const quizImagesPath = path.join(__dirname, "media/quizImages");
+const quizImagesPath = path.join(__dirname, "media/quizImages/");
 
 app.get("/quizImages/:imageName", (req, res) => {
   const requestedImage = path.join(quizImagesPath, req.params.imageName);
