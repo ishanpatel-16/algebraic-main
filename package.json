@@ -1,0 +1,30 @@
+{
+  "name": "algebraic",
+  "version": "1.0.0",
+  "description": "puzzle",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon script",
+    "build": "echo 'build script executed'"
+  },
+  "author": "Zinemind technologies",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "express-async-handler": "^1.2.0",
+    "formidable": "^2.1.1",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.14.1",
+    "nodemon": "^3.1.10",
+    "office-to-pdf": "^2.0.0",
+    "path": "^0.12.7",
+    "rate-limiter-flexible": "^7.2.0"
+  }
+}
